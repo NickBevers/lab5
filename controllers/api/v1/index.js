@@ -4,18 +4,22 @@ function getMessage(req, res){
         res.json({
             status: "Succes",
             message: `GETTING a new message for user ${user}`
+
+            //(met mongoDb) Kan berichten teruggeven voor een bepaalde username
+            //Tip: req.params.username
+            //(zonder mongoDb) Response kan zijn: {“message”: “GETTING message for username username”}
         })
     }
     else{
         res.json({
         status: "Succes",
         message: "GETTING messages"
+
+        //Geef messages terug (met mongoDB)
+        //(zonder mongoDb) Response kan zijn : { “message”: “GETTING messages” }
+        //geef ook effectief messages terug uit je databank (of statisch)
     })
-    }
-    
-    //Geef messages terug (met mongoDB)
-    //(zonder mongoDb) Response kan zijn : { “message”: “GETTING messages” }
-    //geef ook effectief messages terug uit je databank (of statisch)
+    } 
 }
 
 function getId(req, res){
@@ -60,22 +64,9 @@ function deleteId(req, res){
     //(zonder mongoDb) Response kan zij: {“message”: “DELETING a message with id id”}
 }
 
-function getUser(req, res){
-    let user = req.query.user;
-    res.json({
-        status: "Succes",
-        message: `GETTING a new message for user ${user}`
-    })
-    //(met mongoDb) Kan berichten teruggeven voor een bepaalde username
-    //Tip: req.params.username
-    //(zonder mongoDb) Response kan zijn: {“message”: “GETTING message for username username”}
-}
-
-
 
 module.exports.getMessage = getMessage;
 module.exports.getId = getId;
 module.exports.setMessage = setMessage;
 module.exports.putId = putId;
 module.exports.deleteId = deleteId;
-module.exports.getUser = getUser;
