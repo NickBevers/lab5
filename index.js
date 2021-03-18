@@ -5,7 +5,7 @@ const routerMessages = require("./routes/index")
 
 app.get("/", (req, res) => {
   app.set("view engine", "pug");
-  res.render("index", { title: "Lab 5 of NIck" });
+  res.render("index", { title: "Lab 5 of Nick" });
 })
 
 app.use("/api/v1/messages", routerMessages)

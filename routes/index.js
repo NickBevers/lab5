@@ -14,7 +14,6 @@ router.put("/:id", messageController.putId)
 
 router.delete("/:id", messageController.deleteId)
 
-router.get("/?user=username", messageController.getUser)
 
 
 module.exports = router;

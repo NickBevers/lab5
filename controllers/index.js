@@ -1,8 +1,18 @@
 function getMessage(req, res){
-    res.json({
+    if(req.query.user != null){
+        let user = req.query.user;
+        res.json({
+            status: "Succes",
+            message: `GETTING a new message for user ${user}`
+        })
+    }
+    else{
+        res.json({
         status: "Succes",
         message: "GETTING messages"
     })
+    }
+    
     //Geef messages terug (met mongoDB)
     //(zonder mongoDb) Response kan zijn : { “message”: “GETTING messages” }
     //geef ook effectief messages terug uit je databank (of statisch)
