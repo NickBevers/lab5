@@ -8,7 +8,7 @@ router.get("/", messageController.getMessage)
 
 router.get("/:id", messageController.getId)
 
-router.post("/:user", messageController.setMessage)
+router.post("/", messageController.setMessage)
 
 router.put("/:id", messageController.putId)
 
